@@ -1,0 +1,116 @@
+{
+    "basic_config": {
+        "target_url": "https://www.zhaobiao.cn",
+        "wait_time": 10,
+        "request_delay": 2,
+        "retry_times": 3,
+        "log_level": "INFO",
+        "base_url": "https://zhaobiao.cn",
+        "save_path": "data/scraped_pages"
+    },
+    "browser_config": {
+        "headless": false,
+        "window_size": [1920, 1080],
+        "disable_images": false,
+        "disable_javascript": false,
+        "page_load_strategy": "normal",
+        "chrome_options": [
+            "--disable-gpu",
+            "--no-sandbox",
+            "--disable-dev-shm-usage"
+        ]
+    },
+    "data_config": {
+        "output_formats": ["excel", "csv", "json"],
+        "save_html": true,
+        "save_attachments": true,
+        "max_pages_per_search": 10,
+        "data_dir": "./data",
+        "raw_data_dir": "./data/raw",
+        "processed_data_dir": "./data/processed",
+        "attachments_dir": "./data/attachments"
+    },
+    "database_config": {
+        "type": "sqlite",
+        "sqlite_path": "./data/zhaobiao.db",
+        "mysql_config": {
+            "host": "localhost",
+            "port": 3306,
+            "user": "root",
+            "password": "",
+            "database": "zhaobiao_db",
+            "charset": "utf8mb4"
+        }
+    },
+    "schedule_config": {
+        "enable_schedule": false,
+        "schedule_time": "09:00",
+        "schedule_days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+        "timezone": "Asia/Shanghai"
+    },
+    "logging_config": {
+        "log_level": "INFO",
+        "log_dir": "./logs",
+        "log_file": "zhaobiao_spider.log",
+        "max_log_size": "10MB",
+        "backup_count": 5,
+        "console_output": true
+    },
+    "element_selectors": {
+        "homepage_search_box": "input[name='kw']",
+        "homepage_search_button": "button[type='submit']",
+        "search_page_keyword_box": "input[name='kw']",
+        "info_type_checkboxes": "input[name='categoryCode']",
+        "date_range_select": "select[name='timeType']",
+        "search_confirm_button": "button.search-btn",
+        "result_items": ".search-result-item",
+        "title_link": ".title a",
+        "content_text": ".content",
+        "publish_date": ".publish-date",
+        "source": ".source",
+        "attachment_links": ".attachment a",
+        "next_page": ".next-page",
+        "login_check": ".user-info"
+    },
+    "member_center_config": {
+        "member_center_url": "https://user.zhaobiao.cn/homePageUc.do",
+        "customize_url": "https://center.zhaobiao.cn/www/ucFocusCustomize/listOrder",
+        "condition_01_url": "/www/ucFocusCustomize/listOrder?keyNo=1",
+        "condition_02_url": "/www/ucFocusCustomize/listOrder?keyNo=2",
+        "default_days_range": 2,
+        "max_conditions": 5
+    },
+    "time_config": {
+        "start_time_selector": "#startTime",
+        "end_time_selector": "#endTime",
+        "search_button_selector": "button[type='submit'], input[type='submit'], .search-btn"
+    },
+    "ftp_config": {
+        "host": "49.232.143.150",
+        "port": 21,
+        "username": "wenwenba2020_ftp",
+        "password": "buyaolianQ10",
+        "remote_path": "/zhaobiao_info_filte/",
+        "web_base_url": "http://49.232.143.150:10000/zhaobiao_info_filte/"
+    },
+    "save_config": {
+        "local_save_dir": "data/scraped_pages",
+        "include_images": true,
+        "include_attachments": true,
+        "include_styles": true,
+        "include_links": true,
+        "page_format": "html"
+    },
+    "search_config": {
+        "default_keywords": [],
+        "default_info_types": [],
+        "default_date_range": "",
+        "info_types": {},
+        "date_ranges": {},
+        "condition_01": {
+            "name": "定制条件01",
+            "time_range": 3,
+            "keywords": []
+        }
+    }
+}
